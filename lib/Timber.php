@@ -248,7 +248,7 @@ class Timber {
 	public static function get_context() {
 		if ( empty(self::$context_cache) ) {
 			self::$context_cache['http_host'] = URLHelper::get_scheme().'://'.URLHelper::get_host();
-			self::$context_cache['wp_title'] = Helper::get_wp_title();
+			self::$context_cache['wp_title'] = wp_get_document_title();
 			self::$context_cache['body_class'] = implode(' ', get_body_class());
 
 			self::$context_cache['site'] = new Site();
